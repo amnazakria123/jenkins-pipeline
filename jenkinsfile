@@ -1,4 +1,5 @@
-pipeline {
+
+                pipeline {
     agent any
     tools {nodejs '17.3.1'}
 
@@ -22,17 +23,15 @@ pipeline {
 
         stage('Start Application') {
             steps { 
-                script {
-            def result = sh returnStatus: true, script: 'npm start'
-            if (result != 0) {
-                error("npm start failed with exit code ${result}")
-            }
+                sh 'npm start'
+             
         }
 
 
-                sh 'npm start'
+        
             }
         }
     }
-}
+
  
+               
