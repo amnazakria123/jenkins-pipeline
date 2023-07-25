@@ -21,7 +21,14 @@ pipeline {
         }
 
         stage('Start Application') {
-            steps { dir('/home/amna')
+            steps { 
+                script {
+            def result = sh returnStatus: true, script: 'npm start'
+            if (result != 0) {
+                error("npm start failed with exit code ${result}")
+            }
+        }
+
 
                 sh 'npm start'
             }
