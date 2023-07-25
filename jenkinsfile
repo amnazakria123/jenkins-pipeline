@@ -21,7 +21,8 @@ pipeline {
         }
 
         stage('Start Application') {
-            steps {
+            steps { dir('/home/amna')
+
                 sh 'npm start'
             }
         }
