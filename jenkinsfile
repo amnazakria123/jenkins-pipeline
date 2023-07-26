@@ -8,7 +8,7 @@
             steps {
                 
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
-                         userRemoteConfigs: [[url: 'https://github.com/amnazakria123/jenkins-pipeline-public.git']]])
+                         userRemoteConfigs: [[url: ''https://github.com/amnazakria123/jenkins-pipeline.git]]])
             
              
             }
